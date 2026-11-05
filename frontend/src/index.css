@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #f7f7f5;
+  --card: #ffffff;
+  --border: #e5e5e2;
+  --text: #1f2429;
+  --muted: #6b7280;
+  --accent: #4a6fa5;
+  --accent-hover: #3d5d8c;
+  --danger: #b45353;
+  --warn: #a97c3f;
+  --ok: #4f7a5a;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+@layer components {
+  .card {
+    @apply bg-white border rounded-lg;
+    border-color: var(--border);
+  }
+  .btn {
+    @apply inline-flex items-center justify-center px-4 py-2 rounded-md text-sm font-medium transition-colors;
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--text);
+  }
+  .btn:hover { background: #f0f0ee; }
+  .btn-primary {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+  }
+  .btn-primary:hover { background: var(--accent-hover); }
+  .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+  .input {
+    @apply w-full px-3 py-2 rounded-md text-sm;
+    border: 1px solid var(--border);
+    background: #fff;
+    color: var(--text);
+  }
+  .input:focus { outline: 2px solid var(--accent); outline-offset: 0; }
+  .label { @apply block text-sm font-medium mb-1; color: var(--text); }
+  .muted { color: var(--muted); }
+  .badge {
+    @apply inline-block px-2 py-0.5 rounded text-xs font-medium;
+    border: 1px solid var(--border);
+  }
+}
